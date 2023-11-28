@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	// รับข้อมูลจากผู้ใช้
+let input1 = prompt("กรุณาใส่ตัวเลขครั้งที่ 1");
+let input2 = prompt("กรุณาใส่ตัวเลขครั้งที่ 2");
+
+// แปลงข้อมูลที่ได้จาก prompt เป็นตัวเลข
+let number1 = parseFloat(input1);
+let number2 = parseFloat(input2);
+
+// ตรวจสอบว่าข้อมูลที่รับเข้ามาเป็นตัวเลขหรือไม่
+if (isNaN(number1) || isNaN(number2)) {
+  alert("กรุณาใส่ตัวเลขทั้งสองครั้ง");
+} else {
+  // แสดงผลบวก
+  let sum = number1 + number2;
+  alert("ผลบวกของตัวเลขทั้งสองคือ: " + sum);
+}
+
+</script>
+
+</body>
+</html>

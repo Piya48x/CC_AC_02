@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=alertar, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert(null || 2 || undefined); // แสดง: 2 (เนื่องจาก null เป็น falsy และ 2 เป็นค่าแรกที่เจอที่เป็น truthy)
+
+      alert(alert(1) || 2 || alert(3)); // แสดง: 1 และ 2 (alert(1) จะแสดง 1 และเป็น truthy, จึงตรงกับเงื่อนไขและไม่ทำ alert(2) และ alert(3))
+
+      alert(1 && null && 2); // แสดง: null (เนื่องจากมีค่า null ที่เป็น falsy)
+
+      alert(alert(1) && alert(2)); // แสดง: 1 และ undefined (alert(1) จะแสดง 1 และเป็น truthy, จึงทำ alert(2) แต่ alert(2) จะแสดง undefined)
+
+      alert(null || (2 && 3) || 4); // แสดง: 3 (เนื่องจาก (2 && 3) มีค่าเป็น 3 ที่เป็น truthy)
+    </script>
+  </body>
+</html>
