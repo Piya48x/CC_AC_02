@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+let count = 0;
+
+while (true) {
+    let input = prompt("กรุณาป้อนตัวเลข (ป้อน 0 เพื่อหยุด):");
+
+    // ตรวจสอบเงื่อนไขเพื่อหยุด loop
+    if (input === null || input === "" || input.toLowerCase() === "esc" || input.toLowerCase() === "cancel" || parseFloat(input) === 0) {
+        break;
+    }
+
+    // แปลง input เป็นตัวเลข
+    let number = parseFloat(input);
+
+    // ตรวจสอบว่า input เป็นตัวเลขหรือไม่
+    if (!isNaN(number)) {
+        sum += number;
+        count++;
+    } else {
+        alert("โปรดป้อนตัวเลขที่ถูกต้อง");
+    }
+}
+
+if (count === 0) {
+    alert("คุณไม่ได้ป้อนตัวเลข");
+} else {
+    let average = sum / count;
+    alert("ผลรวม: " + sum + "\nค่าเฉลี่ย: " + average.toFixed(2));
+}
+    </script>
+</body>
+</html>

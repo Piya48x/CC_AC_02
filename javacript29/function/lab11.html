@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         function checkAge(age){
+//     if (age > 18) {
+//         return true;
+//     } else {
+//         return confirm("Did parents allow you?");
+//     }
+// }
+// checkAge(8)
+
+//ใช้ if แต่ไม่ใช้ else:
+function checkAgeNoElse(age) {
+    if (age > 18) {
+        return true;
+    }
+    return confirm("Did parents allow you?");
+}
+checkAgeNoElse(10)
+
+// //ใช้ ? แทน if:
+// function checkAgeWithTernary(age) {
+//     return (age > 18) ? true : confirm("Did parents allow you?");
+// }
+
+// //ใช้ || แทน if:
+// function checkAgeWithLogicalOr(age) {
+//     return (age > 18) || confirm("Did parents allow you?");
+// }
+/*ทุกฟังก์ชันนี้จะทำงานเหมือนกับ checkAge โดยถามผู้ใช้ถ้าอายุน้อยกว่า 18 และคืนค่า true ถ้าอายุมากกว่าหรือเท่ากับ 18 ทั้งนี้ในกรณีที่ต้องถามผู้ใช้ด้วย confirm ถ้าอายุน้อยกว่า 18. */
+
+
+    </script>
+</body>
+</html>
