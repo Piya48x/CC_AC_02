@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function createProfile() {
+    // Use prompt to get first name and last name
+    const firstName = prompt("กรุณากรอกชื่อของคุณ:");
+    const lastName = prompt("กรุณากรอกนามสกุลของคุณ:");
+
+    // Use prompt and while loop to get hobbies continuously
+    const hobbies = [];
+    while (true) {
+        const hobby = prompt("กรุณากรอกงานอดิเรก (หรือพิมพ์ 'done' เพื่อสิ้นสุด):");
+        if (hobby.toLowerCase() === 'done') {
+            break;
+        }
+        hobbies.push(hobby);
+    }
+
+    const numberOfHobbies = hobbies.length;
+
+    return {
+        firstName,
+        lastName,
+        hobbies,
+        numberOfHobbies
+    };
+}
+
+// Example of calling the function
+const profile1 = createProfile();
+alert(JSON.stringify(profile1));
+
+const profile2 = createProfile();
+alert(JSON.stringify(profile2));
+
+
+    </script>
+    
+</body>
+</html>
