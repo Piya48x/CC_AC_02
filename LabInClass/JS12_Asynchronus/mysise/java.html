@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+      }
+
+      .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("/w3images/coffeehouse.jpg");
+        min-height: 75%;
+      }
+
+      .menu {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w3-top">
+      <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+          <a href="./index.html" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="./java.html" class="w3-button w3-block w3-black">JAVA JS</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="./api.html" class="w3-button w3-block w3-black">APIs</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+        </div>
+      </div>
+
+      <h1>The Document Object</h1>
+      <h2>The getElementById() Method</h2>
+      <p id="demo">ผลลัพธ์ : ว่าง</p>
+      <button type="button" onclick="addNumbers()">กด เพื่อบวกเลข</button>
+      <hr />
+      <p id="demo2">ฉันพร้อมจะเปลี่ยนคำ มาเลย</p>
+
+      <button type="button" onclick="chaengUni()">กด เพื่อเปลี่ยนคำ</button>
+      <hr />
+      <label for="demo3">รับตัวอักษร : A-Z</label>
+      <button type="button" onclick="printAlphabet()">Print A-Z</button>
+      <p id="demo3"></p>
+      <br />
+      <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+        <p>
+          Powered by
+          <a
+            href="https://www.w3schools.com/w3css/default.asp"
+            title="W3.CSS"
+            target="_blank"
+            class="w3-hover-text-green"
+            >w3.css</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      function addNumbers() {
+        var num1 = prompt("Enter the first number:");
+        var num2 = prompt("Enter the second number:");
+
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Please enter valid numbers.");
+        } else {
+          var result = parseFloat(num1) + parseFloat(num2);
+          document.getElementById("demo").innerHTML = "Result: " + result;
+        }
+      }
+
+      function chaengUni() {
+        let inputUni = prompt("ป้อนคำที่คุณที่การจะเปลี่ยน : ");
+        document.getElementById("demo2").innerHTML = "คำที่ใส่ : " + inputUni;
+      }
+
+      function sayHi(age) {
+        if (age < 12) {
+          alert("สถานะของคุณ : เด็กน้อย");
+        } else {
+          alert("สถานะของคุณ : ผู้ใหญ่");
+        }
+      }
+
+      sayHi(prompt("กรอกอายุของคุณ : "));
+
+      let currentCharCode = "A".charCodeAt(0);
+      let output = "";
+
+      function printAlphabet() {
+        output += String.fromCharCode(currentCharCode) + " ";
+        currentCharCode++;
+
+        if (currentCharCode <= "Z".charCodeAt(0)) {
+          setTimeout(printAlphabet, 1000);
+        } else {
+          document.getElementById("demo3").innerHTML = output;
+        }
+      }
+
+      document.getElementById("demo3").innerHTML = output;
+    </script>
+  </body>
+</html>
