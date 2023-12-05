@@ -14,6 +14,7 @@
       html {
         height: 100%;
         font-family: "Inconsolata", sans-serif;
+        overflow: auto;
       }
 
       .bgimg {
@@ -26,10 +27,52 @@
       .menu {
         display: none;
       }
+
+      .content {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .lab-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        
+      }
+
+      .lab-description {
+        margin-bottom: 20px;
+        
+      }
+
+      .input-label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .result {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      footer {
+        margin-top: 20px;
+      }
+
+      .lab {
+        margin-top: 20px;
+      }
+
+      .scrollview {
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
     </style>
   </head>
   <body>
-    <div class="w3-top">
+    <div>
       <div class="w3-row w3-padding w3-black">
         <div class="w3-col s3">
           <a href="./index.html" class="w3-button w3-block w3-black">HOME</a>
@@ -45,18 +88,47 @@
         </div>
       </div>
 
-      <h1>The Document Object</h1>
-      <h2>The getElementById() Method</h2>
-      <p id="demo">ผลลัพธ์ : ว่าง</p>
-      <button type="button" onclick="addNumbers()">กด เพื่อบวกเลข</button>
+      <h1>Lab 5 ที่ชอบ</h1>
+      <div class="lab">
+        <h2 class="lab-title">Lab 1: บวกเลข</h2>
+        <p class="lab-description">กรอกเลขทั้งสองตัวแล้วกดปุ่มเพื่อบวก</p>
+        <button type="button" onclick="addNumbers()">บวกเลข</button>
+        <p id="demo" class="result">ผลลัพธ์ : ว่าง</p>
+      </div>
       <hr />
-      <p id="demo2">ฉันพร้อมจะเปลี่ยนคำ มาเลย</p>
+      <div class="lab">
+        <h2 class="lab-title">Lab 2: เปลี่ยนคำ</h2>
+        <p class="lab-description">กรอกคำแล้วกดปุ่มเพื่อแสดงคำที่กรอก</p>
+        <button type="button" onclick="chaengUni()">เปลี่ยนคำ</button>
+        <p id="demo2" class="result">ฉันพร้อมจะเปลี่ยนคำ มาเลย</p>
+      </div>
+      <hr />
+      <div class="lab">
+        <h2 class="lab-title">Lab 3: Print A-Z</h2>
+        <p class="lab-description">กดปุ่มเพื่อพิมพ์ตัวอักษร A-Z</p>
+        <button type="button" onclick="printAlphabet()">Print A-Z</button>
+        
+        <div id="demo3" class="scrollview" style="width: 500px;"></div>
+      </div>
+      <hr />
+      <div class="lab">
+        <h2 class="lab-title">Lab 4: ตรวจสอบอายุ</h2>
+        <p class="lab-description">กรอกอายุแล้วกดปุ่มเพื่อตรวจสอบสถานะ</p>
+        <label for="ageInput" class="input-label">อายุ : </label>
+        <input type="text" name="" id="ageInput" />
+        <button type="button" onclick="sayHi()">ตรวจสอบอายุ</button>
+        <p id="demo3" class="result"></p>
+      </div>
+      <hr />
+      <div class="lab">
+        <h2 class="lab-title">Lab 5: คำนวณ Factorial</h2>
+        <p class="lab-description">กรอกตัวเลขแล้วกดปุ่มเพื่อคำนวณ Factorial</p>
+        <label for="factorialInput" class="input-label">ตัวเลข : </label>
+        <input type="text" name="" id="factorialInput" />
+        <button type="button" onclick="factorial()">คำนวณ</button>
+        <p id="factorialResult" class="result"></p>
+      </div>
 
-      <button type="button" onclick="chaengUni()">กด เพื่อเปลี่ยนคำ</button>
-      <hr />
-      <label for="demo3">รับตัวอักษร : A-Z</label>
-      <button type="button" onclick="printAlphabet()">Print A-Z</button>
-      <p id="demo3"></p>
       <br />
       <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
         <p>
@@ -90,15 +162,20 @@
         document.getElementById("demo2").innerHTML = "คำที่ใส่ : " + inputUni;
       }
 
-      function sayHi(age) {
-        if (age < 12) {
-          alert("สถานะของคุณ : เด็กน้อย");
+      function sayHi() {
+        let ageInput = document.getElementById("ageInput").value;
+        let age = parseInt(ageInput);
+
+        if (isNaN(age)) {
+          alert("Please enter a valid age.");
         } else {
-          alert("สถานะของคุณ : ผู้ใหญ่");
+          if (age < 18) {
+            alert("สถานะของคุณ : เด็กน้อย");
+          } else {
+            alert("สถานะของคุณ : ผู้ใหญ่");
+          }
         }
       }
-
-      sayHi(prompt("กรอกอายุของคุณ : "));
 
       let currentCharCode = "A".charCodeAt(0);
       let output = "";
@@ -115,6 +192,26 @@
       }
 
       document.getElementById("demo3").innerHTML = output;
+      function factorial() {
+  let factorialInput = document.getElementById("factorialInput").value;
+  let n = parseInt(factorialInput);
+
+  if (isNaN(n)) {
+    alert("Please enter a valid number.");
+  } else {
+    let result = calculateFactorial(n);
+    document.getElementById("factorialResult").innerHTML = `Factorial ของ ${n} คือ: ${result}`;
+  }
+}
+
+function calculateFactorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * calculateFactorial(n - 1);
+  }
+}
+
     </script>
   </body>
 </html>
