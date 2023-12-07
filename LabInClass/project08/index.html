@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Container</title>
+    <style>
+        body {
+            min-height: auto;
+        }
+      .header {
+        background-color: aqua;
+        padding-block: 16px;
+        padding-left: 4px;
+      }
+      .logo {
+        /* background-color: blueviolet; */
+        display: inline-block;
+        width: 48%;
+
+      }
+      .navbar {
+        /* background-color: salmon; */
+        display: inline-block;
+        width: 50%;
+        text-align: right;
+      }
+      .title {
+        background-color: antiquewhite;
+        margin: 0;
+      }
+      .show-area {
+        background-color: rgb(229, 255, 0);
+        padding: 20px;
+        height: 100%;
+      }
+      .card-container {
+        background-color: aqua;
+        padding: 10px;
+      }
+      .card {
+        border: 1px solid black;
+        width: 250px;
+        padding: 4px;
+        text-align: center;
+        border-radius: 10px;
+        display: inline-block;
+        margin-right: 5px;
+
+      }
+      img {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">Logo</div>
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">The</a>
+        <a href="#">One</a>
+        <a href="#">Picec</a>
+      </div>
+    </div>
+    <h1 class="title">Picture Gallery</h1>
+    <div class="show-area">
+      <div class="card-container">
+        <div class="card">
+          <img src="https://picsum.photos/250" alt="" />
+          <h3>Nice Pic 1</h3>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/250?rendom=1" alt="" />
+          <h3>Nice Pic 2</h3>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/250?rendom=2" alt="" />
+          <h3>Nice Pic 2</h3>
+        </div>
+      </div>
+    </div>
+    <a href="../project09/index.html">Go to Page 9</a>
+  </body>
+</html>

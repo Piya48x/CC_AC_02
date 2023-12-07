@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Psition</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 200vh;
+      }
+      .container {
+        background-color: aqua;
+        min-height: 500px;
+        margin: auto;
+        position: relative;
+        z-index: -1;
+        top: 0px;
+      }
+      .item {
+        border: 1px solid rebeccapurple;
+        position: absolute;
+        padding: 8px;
+        background: #ff000099;
+        /* top: 20px;
+        bottom: 20px;
+        left: 20px;
+        right: 20px; */
+        inset: 30px 50px 60px 80px;
+      }
+      h2 {
+        position: sticky;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Position</h1>
+    <div class="container">
+        <!-- <h3>Dummy message</h3> -->
+      <div class="item">ITEM</div>
+      <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis iure aliquam voluptatem temporibus, cum quasi molestias dicta necessitatibus eos inventore, commodi veritatis? Doloremque vel in eligendi quos dignissimos dolore eveniet.</p> -->
+    </div>
+    <h2>CodecampAcademy</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae excepturi, animi sint accusamus nulla dicta ipsa beatae eos. Culpa minus magnam ex ratione itaque ea unde vero ipsa tempore earum!</p>
+  </body>
+</html>
