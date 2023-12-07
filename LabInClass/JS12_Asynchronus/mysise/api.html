@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>W3.CSS Template</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W3.CSS Template</title>
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/4/w3.css"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Inconsolata"
@@ -26,28 +29,91 @@
       .menu {
         display: none;
       }
+
+      #result {
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
     </style>
   </head>
-  <body>
-    <div class="w3-top">
-      <div class="w3-row w3-padding w3-black">
-        <div class="w3-col s3">
-          <a href="./index.html" class="w3-button w3-block w3-black">HOME</a>
+  <center>
+    <body>
+
+      <div>
+        <div class="w3-row w3-padding w3-black">
+          <div class="w3-col s3">
+            <a href="./index.html" class="w3-button w3-block w3-black"
+              >HOME</a
+            >
+          </div>
+          <div class="w3-col s3">
+            <a href="./java.html" class="w3-button w3-block w3-black"
+              >JAVA JS</a
+            >
+          </div>
+          <div class="w3-col s3">
+            <a href="./api.html" class="w3-button w3-block w3-black">APIs</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+          </div>
         </div>
-        <div class="w3-col s3">
-          <a href="./java.html" class="w3-button w3-block w3-black">JAVA JS</a>
-        </div>
-        <div class="w3-col s3">
-          <a href="./api.html" class="w3-button w3-block w3-black">APIs</a>
-        </div>
-        <div class="w3-col s3">
-          <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+        <h1>API</h1>
+        <hr />
+        <h2>Lab 2</h2>
+        <form id="zipcodeForm">
+          <label for="zipcode">รหัสไปรษณีย์:</label>
+          <input type="text" id="zipcode" name="zipcode" />
+          
+          <button type="button" onclick="getAddress()">ค้นหา</button>
+          <div id="result1"></div>
+          <br>
+          <br>
+          <button type="button" onclick="getRandomDogImage()">สุ่มรูปหมา</button>
+          <div id="result2"></div>
+          <br>
+          <br>
+          <button type="button" onclick="getCryptoPriceWithHistory('bitcoin')">ดึงราคา Bitcoin</button>
+          <div id="result3"></div>
+          <br>
+          <hr>
+          <br>
+          
+        </form>
+  
+        
+        
+        
+        <form
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbyIq_Mo2UZVw8oYOdTQoaMTDS6xigvojY00Ezm07hoI9yCGvKbEkz3D1CWFLRXauwd8DA/exec"
+        >
+          <input name="Email" type="email" placeholder="Email" required />
+          <input name="Name" type="text" placeholder="Name" required />
+          <input name="Topic" type="text" placeholder="Topic" required />
+          <button type="submit">Send</button>
+          <br>
+          <div>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWd-ikMc5X7UL-AICeczNioR8yZeQd-eaAP_ZRRJT_vKIA4lehJprGx7FDLK-S-Q6IPd3dyX8tcf-H/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+          </div>
+        </form>
+        <div>
+          <hr />
         </div>
       </div>
-      <h1>API</h1>
-      
-    </div>
-
-    <!-- Links (sit on top) -->
-  </body>
+  
+      <script src="./api.js"></script>
+    </body>
+  </center>
+  
 </html>

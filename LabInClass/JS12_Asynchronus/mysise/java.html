@@ -9,13 +9,19 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Inconsolata"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./country-by-population.json"></script>
+    <script></script>
     <style>
-      body,
-      html {
-        height: 100%;
-        font-family: "Inconsolata", sans-serif;
-        overflow: auto;
+       body {
+       
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Set the height of the body to 100% of the viewport height */
+        margin: 0; /* Remove default margin */
+        text-align: center;
       }
+     
 
       .bgimg {
         background-position: center;
@@ -38,10 +44,12 @@
         font-weight: bold;
         margin-top: 20px;
         
+        
       }
 
       .lab-description {
         margin-bottom: 20px;
+        
         
       }
 
@@ -68,10 +76,25 @@
         overflow-y: auto;
         border: 1px solid #ccc;
         padding: 10px;
+        margin-left: 550px;
+      }
+      .canvas1 {
+        margin-left: 550px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
       }
     </style>
   </head>
-  <body>
+  <body style="text-align: center; ">
     <div>
       <div class="w3-row w3-padding w3-black">
         <div class="w3-col s3">
@@ -127,8 +150,24 @@
         <input type="text" name="" id="factorialInput" />
         <button type="button" onclick="factorial()">คำนวณ</button>
         <p id="factorialResult" class="result"></p>
-      </div>
 
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="lab canvas1">
+        <h2 class="lab-title" style="margin-right: 500px;">ข้อมูลประชากรในแต่ละประเทศ 2018</h2>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <canvas id="populationChart" width="300" height="200"></canvas>
+
+  <br>
+  <hr>
+  <br>
+  <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
       <br />
       <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
         <p>
@@ -143,75 +182,6 @@
         </p>
       </footer>
     </div>
-
-    <script>
-      function addNumbers() {
-        var num1 = prompt("Enter the first number:");
-        var num2 = prompt("Enter the second number:");
-
-        if (isNaN(num1) || isNaN(num2)) {
-          alert("Please enter valid numbers.");
-        } else {
-          var result = parseFloat(num1) + parseFloat(num2);
-          document.getElementById("demo").innerHTML = "Result: " + result;
-        }
-      }
-
-      function chaengUni() {
-        let inputUni = prompt("ป้อนคำที่คุณที่การจะเปลี่ยน : ");
-        document.getElementById("demo2").innerHTML = "คำที่ใส่ : " + inputUni;
-      }
-
-      function sayHi() {
-        let ageInput = document.getElementById("ageInput").value;
-        let age = parseInt(ageInput);
-
-        if (isNaN(age)) {
-          alert("Please enter a valid age.");
-        } else {
-          if (age < 18) {
-            alert("สถานะของคุณ : เด็กน้อย");
-          } else {
-            alert("สถานะของคุณ : ผู้ใหญ่");
-          }
-        }
-      }
-
-      let currentCharCode = "A".charCodeAt(0);
-      let output = "";
-
-      function printAlphabet() {
-        output += String.fromCharCode(currentCharCode) + " ";
-        currentCharCode++;
-
-        if (currentCharCode <= "Z".charCodeAt(0)) {
-          setTimeout(printAlphabet, 1000);
-        } else {
-          document.getElementById("demo3").innerHTML = output;
-        }
-      }
-
-      document.getElementById("demo3").innerHTML = output;
-      function factorial() {
-  let factorialInput = document.getElementById("factorialInput").value;
-  let n = parseInt(factorialInput);
-
-  if (isNaN(n)) {
-    alert("Please enter a valid number.");
-  } else {
-    let result = calculateFactorial(n);
-    document.getElementById("factorialResult").innerHTML = `Factorial ของ ${n} คือ: ${result}`;
-  }
-}
-
-function calculateFactorial(n) {
-  if (n === 0 || n === 1) {
-    return 1;
-  } else {
-    return n * calculateFactorial(n - 1);
-  }
-}
-
-    </script>
+    <script src="./java.js"></script>
   </body>
 </html>
