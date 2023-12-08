@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-H67M1ZwMZPBc1TweVjaTuyY3ICtTgbCT5s9trgthtd3T0Dz+8ZiwePHH98j5TxdM74bL4x9LSMlFY2tpRQeL8Q==" crossorigin="anonymous" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            position: relative;
+            width: fit-content;
+            border: 1px solid #000; /* Set border with a single line */
+            border-radius: 8px; /* Optional: Add border-radius to round the corners */
+        }
+
+        .card img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px 8px 0 0; /* Round only the top corners of the image */
+            padding: 10px;
+
+        }
+
+        .top-left {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 5;
+        }
+
+        .top-left:before {
+            font-size: 20px;
+            color: #000;
+            position: absolute;
+            
+        }
+
+        .top-left:before {
+            top: 0;
+            left: 0;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .red-circle {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            top: -20px;
+            right: -23px;
+        }
+
+        .card1 {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <title>CSS Lab01 - Profile Card & Badge</title>
+</head>
+<body>
+    <h1>Profile Card</h1>
+    <div class="container">
+        <div class="card">
+            <img src="./d.jpg" alt="">
+            <div class="top-left"><i class="fa fa-times" aria-hidden="true" style="font-size: 30px; color: gray;"></i></div>
+            <div class="top-right">
+                <div class="red-circle">9</div>
+            </div>
+            <hr>
+            <div class="card1">
+                <h2>Piya Phonluea</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

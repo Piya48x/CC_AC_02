@@ -1,0 +1,40 @@
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ body {
+   font-family: Arial, sans-serif;
+}
+
+h1 {
+   text-align: center;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+.card {
+   border: 1px solid #000; /* Set border with a single line */
+   padding: 20px;
+   border-radius: 8px; /* Optional: Add border-radius to round the corners */
+}
+
+.card img {
+   width: 100%;
+   height: auto;
+   border-radius: 8px; /* Optional: Add border-radius to round the corners of the image */
+}
+
+.card1 {
+   border: 1px solid #000; /* Set border with a single line */
+   padding: 10px;
+   margin-top: 10px;
+   text-align: center;
+   margin: 0;
+   width: 100%;
+}
